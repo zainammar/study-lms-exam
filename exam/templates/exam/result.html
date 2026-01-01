@@ -1,0 +1,8 @@
+{% extends "exam/base.html" %}
+
+{% block content %}
+<h3>Result</h3>
+<p><strong>{{ quiz.title }}</strong></p>
+<p>Score: {{ score }} / {{ total }}</p>
+<a href="/">Back to Home</a>
+{% endblock %}
