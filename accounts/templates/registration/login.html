@@ -1,77 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body { 
-            
-            font-family: Arial; 
-            text-decoration: none;
-        
-        
-        }
-        header {
-            background: #000000;
-            color: white;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-        }
-        header img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        header h2 {
-            margin: 0;
-        }
-        .container {
-            padding: 20px;
-        }
-    </style>
-    <style>
-        .button {
-          background-color: #008CBA;
-          color: white;
-          padding: 16px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          transition-duration: 0.4s;
-          cursor: pointer;
-        }
-        
-        
-        .button3:hover {
-          background-color:red;
-          color: white;
-        }
-        
-        a{
-            text-align: center;
-           text-decoration: none;
-           color: white;
-        }
-        </style>
-    <title>Login</title>
-</head>
-<body>
+{% extends "exam/base.html" %}
+{% block content %}
 
-    <header>
 <h2>Student Login</h2>
-    </header>
 
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="button button3" type="submit">Login</button>
+    <button type="submit">Login</button>
 </form>
 
 <p>
-    <button class="button button3"><a href="/">Back to Home</a></button>
+    <a href="/">Back to Home</a>
 </p>
-<h2>You have logged out</h2>
-<button class="button button3"><a href="/accounts/login/">Login again</a>
-</button>
-</body>
-</html>
+
+{% endblock %}

@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.contrib.auth.views import LogoutView
+from django.urls import reverse_lazy
 
-# Create your views here.
+class LogoutGetView(LogoutView):
+    # Redirect users to quiz list after logout
+    next_page = reverse_lazy('quiz_list')
+    http_method_names = ['get', 'post']  # allow GET and POST
